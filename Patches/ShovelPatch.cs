@@ -16,8 +16,9 @@ namespace CrucibleShovel.Patches
             if (__instance.GetType() == typeof(Shovel))
             {
                 MeshFilter mesh = __instance.gameObject.GetComponentInChildren<MeshFilter>();
-                CrucibleShovel.Plugin.Log.LogInfo(mesh);
                 mesh.mesh = CrucibleShovel.Plugin.newModel;
+                Renderer renderer = __instance.gameObject.GetComponentInChildren<MeshRenderer>();
+                renderer.material = CrucibleShovel.Plugin.newMaterial;
             } 
         }
     }

@@ -20,8 +20,10 @@ namespace CrucibleShovel
         private static readonly Harmony Harmony = new Harmony(MyGuid);
 
         public static ManualLogSource Log;
-
+         
         public static Mesh newModel;
+
+        public static Material newMaterial;
         public void Awake()
         {
             string location = ((BaseUnityPlugin)this).Info.Location;
@@ -30,6 +32,7 @@ namespace CrucibleShovel
             string text3 = text2 + "crucible";
             AssetBundle val = AssetBundle.LoadFromFile(text3);
             newModel = val.LoadAssetWithSubAssets<Mesh>("untitled.obj")[0];
+            newMaterial = val.LoadAsset<Material>("Untitled.001");
             Harmony.PatchAll();
             Logger.LogInfo(PluginName + " " + VersionString + " " + "loaded.");
             Log = Logger;

@@ -15,9 +15,11 @@ namespace CrucibleShovel.Patches
         {
             if (__instance.GetType() == typeof(Shovel))
             {
-                MonoBehaviour bh = __instance as MonoBehaviour;
-                bh.gameObject.GetComponent<MeshFilter>().sharedMesh = CrucibleShovel.Plugin.newModel;
-            }
+                MeshFilter mesh = __instance.gameObject.GetComponentInChildren<MeshFilter>();
+                CrucibleShovel.Plugin.Log.LogInfo(mesh);
+                mesh.mesh = CrucibleShovel.Plugin.newModel;
+            } 
         }
     }
 }
+ 

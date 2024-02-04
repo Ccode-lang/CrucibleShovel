@@ -13,7 +13,7 @@ namespace CrucibleShovel.Patches
     {
         public static void Prefix(GrabbableObject __instance)
         {
-            if (__instance.GetType() == typeof(Shovel))
+            if ((__instance.GetType() == typeof(Shovel)) && (__instance.gameObject.GetComponentInChildren<ScanNodeProperties>() == null))
             {
                 MeshFilter mesh = __instance.gameObject.GetComponentInChildren<MeshFilter>();
                 mesh.mesh = CrucibleShovel.Plugin.newModel;

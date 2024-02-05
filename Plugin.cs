@@ -15,7 +15,7 @@ namespace CrucibleShovel
     {
         private const string MyGuid = "Ccode.Crucible";
         private const string PluginName = "CrucibleShovel";
-        private const string VersionString = "1.5";
+        private const string VersionString = "1.5.1";
 
         private static readonly Harmony Harmony = new Harmony(MyGuid);
 
